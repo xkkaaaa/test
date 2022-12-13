@@ -34,9 +34,10 @@
               placeholder="Поиск позиции по первым символам"
               filled
               type="search"
+              v-model="serchPath"
             >
             </q-input>
-            <q-btn icon="search" />
+            <q-btn @click="store.serchPath(serchPath)" icon="search" />
           </div>
           <div class="flex no-wraps">
             <q-input
@@ -99,9 +100,10 @@
               placeholder="Поиск позиции по первым символам"
               filled
               type="search"
+              v-model="serchDosa"
             >
             </q-input>
-            <q-btn icon="search" />
+            <q-btn @click="store.serchDosa(serchDosa)" icon="search" />
           </div>
           <div class="flex no-wrap">
             <q-input
@@ -145,6 +147,9 @@ const modaPath = ref<boolean>(false)
 const modaDosage = ref<boolean>(false)
 const newPath = ref<string>('')
 const newdDosage = ref<string>('')
+
+const serchPath = ref<string>('')
+const serchDosa = ref<string>('')
 </script>
 
 <style></style>

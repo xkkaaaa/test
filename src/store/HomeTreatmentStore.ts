@@ -101,6 +101,25 @@ export const useHomeTreatmentStore = defineStore('HomeTreatmentStore', () => {
     multiplicitys.value = update
   }
 
+  // search
+  const serachProd = (payload: string) => {
+    const update = medProds.value.filter((el) => el.name.includes(payload))
+    medProds.value = update
+  }
+  const serchPath = (payload: string) => {
+    const update = receptionPaths.value.filter((el) => el.name.includes(payload))
+    receptionPaths.value = update
+  }
+  const serchDosa = (payload: string) => {
+    const update = dosages.value.filter((el) => el.name.includes(payload))
+    dosages.value = update
+  }
+  const searchMulti = (payload: string) => {
+    const update = multiplicitys.value.filter((el) => el.name.includes(payload))
+    multiplicitys.value = update
+  }
+
+
   // add
   const atHome = ref<IHome[]>([])
   const add = () => {
@@ -129,6 +148,10 @@ export const useHomeTreatmentStore = defineStore('HomeTreatmentStore', () => {
   }
 
   return {
+    serchDosa,
+    serchPath,
+    serachProd,
+    searchMulti,
     satrtDate,
     endDate,
     deleteMulti,

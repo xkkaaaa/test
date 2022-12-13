@@ -32,9 +32,10 @@
               placeholder="Поиск позиции по первым символам"
               filled
               type="search"
+              v-model="serchDol"
             >
             </q-input>
-            <q-btn icon="search" />
+            <q-btn @click="store.serchDol(serchDol)" icon="search" />
           </div>
           <div class="flex">
             <q-input
@@ -75,6 +76,7 @@ import { ref } from 'vue'
 
 const store = useHemodialysisStore()
 const newDialyzer = ref<string>('')
+const serchDol = ref<string>('')
 const modalDialyzers = ref<boolean>(false)
 </script>
 

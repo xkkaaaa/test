@@ -32,9 +32,10 @@
             placeholder="Поиск позиции по первым символам"
             filled
             type="search"
+            v-model="serchCatheterSize"
           >
           </q-input>
-          <q-btn icon="search" />
+          <q-btn @click="store.serchCatheterSize(serchCatheterSize)" icon="search" />
         </div>
         <div class="flex">
           <q-input
@@ -98,9 +99,10 @@
             placeholder="Поиск позиции по первым символам"
             filled
             type="search"
+            v-model="serchCatheterType"
           >
           </q-input>
-          <q-btn icon="search" />
+          <q-btn @click="store.serchCatheterType(serchCatheterType)" icon="search" />
         </div>
         <div class="flex">
           <q-input
@@ -143,6 +145,8 @@ const modaCatheterSize = ref<boolean>(false)
 const modaCatheterType = ref<boolean>(false)
 const newCatheterSize = ref<string>('')
 const newCatheterType = ref<string>('')
+const serchCatheterSize = ref<string>('')
+const serchCatheterType = ref<string>('')
 </script>
 
 <style></style>

@@ -34,9 +34,10 @@
               placeholder="Поиск позиции по первым символам"
               filled
               type="search"
+              v-model="search"
             >
             </q-input>
-            <q-btn icon="search" />
+            <q-btn @click="store.searchMulti(search)" icon="search" />
           </div>
           <div class="flex no-wrap">
             <q-input
@@ -98,6 +99,8 @@ const store = useHomeTreatmentStore()
 const modal = ref<boolean>(false)
 
 const newMultiplicity = ref<string>('')
+
+const search = ref<string>('')
 </script>
 
 <style></style>

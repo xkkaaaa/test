@@ -34,9 +34,10 @@
                 placeholder="Поиск позиции по первым символам"
                 filled
                 type="search"
+                v-model="serchCon"
               >
               </q-input>
-              <q-btn icon="search" />
+              <q-btn @click="store.serchCon(serchCon)" icon="search" />
             </div>
             <div class="flex">
               <q-input

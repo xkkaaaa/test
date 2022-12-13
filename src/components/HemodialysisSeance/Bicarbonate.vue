@@ -90,9 +90,10 @@
                 placeholder="Поиск позиции по первым символам"
                 filled
                 type="search"
+                v-model="serchAnti"
               >
               </q-input>
-              <q-btn icon="search" />
+              <q-btn @click="store.serchAnti(serchAnti)" icon="search" />
             </div>
             <div class="flex">
               <q-input
@@ -149,6 +150,7 @@ const store = useHemodialysisStore()
 const modaBicarbonate = ref<boolean>(false)
 const modalAnti = ref<boolean>(false)
 const newAnti = ref<string>('')
+const serchAnti = ref<string>('')
 </script>
 
 <style></style>

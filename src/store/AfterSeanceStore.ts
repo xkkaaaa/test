@@ -63,10 +63,20 @@ export const useAfterSeanceStore = defineStore('AfterSeanceStore', () => {
   }
 
   // searc
-  // const searchReceptionPath = (payload: string) => {
-  //  const update =  receptionPaths.value.filter(el => el.includes.name(payload))
-  //  receptionPaths.value = update
-  // }
+  const serachProd = (payload: string) => {
+    const update = medProds.value.filter((el) => el.name.includes(payload))
+    medProds.value = update
+  }
+  const serchPath = (payload: string) => {
+    const update = receptionPaths.value.filter((el) => el.name.includes(payload))
+    receptionPaths.value = update
+  }
+  const serchDosa = (payload: string) => {
+    const update = dosages.value.filter((el) => el.name.includes(payload))
+    dosages.value = update
+  }
+
+
 
   // choice func element
   const choiceMedProd = (payload: string) => {
@@ -130,6 +140,9 @@ export const useAfterSeanceStore = defineStore('AfterSeanceStore', () => {
   }
 
   return {
+    serachProd,
+    serchPath,
+    serchDosa,
     deleteMedProd,
     deleteReceptionPath,
     deleteDosa,

@@ -174,7 +174,44 @@ export const useHemodialysisStore = defineStore('HemodialysisStore', () => {
     anticoagulations.value = update
   }
 
+  // search
+  const serchDol = (payload: string) => {
+    const update = dialyzers.value.filter((el) => el.name.includes(payload))
+    dialyzers.value = update
+  }
+  const serchCon = (payload: string) => {
+    const update = concentrators.value.filter((el) => el.name.includes(payload))
+    concentrators.value = update
+  }
+  const serchNeedleSize = (payload: string) => {
+    const update = needleSizes.value.filter((el) => el.name.includes(payload))
+    needleSizes.value = update
+  }
+  const serchNeedleType = (payload: string) => {
+    const update = needleTypes.value.filter((el) => el.name.includes(payload))
+    needleTypes.value = update
+  }
+  const serchCatheterSize = (payload: string) => {
+    const update = catheterSizes.value.filter((el) => el.name.includes(payload))
+    catheterSizes.value = update
+  }
+  const serchCatheterType = (payload: string) => {
+    const update = catheterTypes.value.filter((el) => el.name.includes(payload))
+    catheterTypes.value = update
+  }
+  const serchAnti = (payload: string) => {
+    const update = anticoagulations.value.filter((el) => el.name.includes(payload))
+    anticoagulations.value = update
+  }
+
   return {
+    serchAnti,
+    serchCatheterType,
+    serchCatheterSize,
+    serchNeedleType,
+    serchNeedleSize,
+    serchCon,
+    serchDol,
     deleteDialyzer,
     deleteCon,
     deleteNeedleSize,

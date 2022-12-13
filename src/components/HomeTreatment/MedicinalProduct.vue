@@ -34,9 +34,10 @@
               placeholder="Поиск позиции по первым символам"
               filled
               type="search"
+              v-model="serachProd"
             >
             </q-input>
-            <q-btn icon="search" />
+            <q-btn @click="store.serachProd(serachProd)" icon="search" />
           </div>
           <div class="flex no-wrap">
             <q-input
@@ -101,6 +102,7 @@ const store = useHomeTreatmentStore()
 
 const modalMedProd = ref<boolean>(false)
 const newMedProd = ref<string>('')
+const serachProd = ref<string>('')
 </script>
 
 <style></style>

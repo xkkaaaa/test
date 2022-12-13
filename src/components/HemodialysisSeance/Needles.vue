@@ -33,9 +33,13 @@
             placeholder="Поиск позиции по первым символам"
             filled
             type="search"
+            v-model="serchNeedleSize"
           >
           </q-input>
-          <q-btn icon="search" />
+          <q-btn
+            @click="store.serchNeedleSize(serchNeedleSize)"
+            icon="search"
+          />
         </div>
         <div class="flex">
           <q-input
@@ -101,9 +105,13 @@
             placeholder="Поиск позиции по первым символам"
             filled
             type="search"
+            v-model="serchNeedleType"
           >
           </q-input>
-          <q-btn icon="search" />
+          <q-btn
+            @click="store.serchNeedleType(serchNeedleType)"
+            icon="search"
+          />
         </div>
         <div class="flex">
           <q-input
@@ -145,7 +153,9 @@ import { ref } from '@vue/reactivity'
 const store = useHemodialysisStore()
 const modaNeedleSize = ref<boolean>(false)
 const modaNeedleType = ref<boolean>(false)
-const newNeedleSeze = ref('')
+const newNeedleSeze = ref<string>('')
+const serchNeedleSize = ref<string>('')
+const serchNeedleType = ref<string>('')
 </script>
 
 <style></style>
